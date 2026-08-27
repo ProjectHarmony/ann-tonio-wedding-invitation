@@ -41,7 +41,8 @@ export const reception = {
   venueAddress: 'Goa, Camarines Sur',
   date: 'Friday, October 16, 2026',
   time: '5:00 PM',
-  mapUrl: 'https://maps.google.com/?q=Casa+Veronica+Goa+Camarines+Sur',
+  mapUrl:
+    'https://www.google.com/maps/search/?api=1&query=Casa%20Veronica%2C%20Goa%2C%20Camarines%20Sur',
 };
 
 // The full day-of timeline, used for the "Wedding Timeline" strip.
@@ -89,32 +90,45 @@ export const attireGuide = {
  * ready — every component below reads exclusively from this object.
  */
 export const photos = {
-  hero: 'https://picsum.photos/seed/aa-hero/1600/2000',
-  ogImage: 'https://picsum.photos/seed/aa-og/1200/630',
+  hero: '/prenup-photos/PIX06945.jpeg',
+  ogImage: '/prenup-photos/PIX06945.jpeg',
   story: [
     {
-      src: 'https://picsum.photos/seed/aa-story-1/1200/1500',
-      caption: 'Two families, one prayer answered.',
-      year: 'How it began',
+      src: '/prenup-photos/PIX07539.jpeg',
+      caption: 'A love made gentle by faith, laughter, and every ordinary day together.',
+      year: 'With every prayer',
     },
     {
-      src: 'https://picsum.photos/seed/aa-story-2/1200/1500',
-      caption: 'Every ordinary day became worth keeping.',
-      year: 'Falling in step',
+      src: '/prenup-photos/PIX07688.jpeg',
+      caption: 'Side by side, we choose forever with grateful hearts.',
+      year: 'With every promise',
     },
     {
-      src: 'https://picsum.photos/seed/aa-story-3/1200/1500',
-      caption: 'He asked. She said yes before he finished.',
-      year: 'The proposal',
+      src: '/prenup-photos/PIX08077.jpeg',
+      caption: 'The best days are the ones we get to walk through hand in hand.',
+      year: 'With every sunrise',
     },
     {
-      src: 'https://picsum.photos/seed/aa-story-4/1200/1500',
-      caption: 'Now, the next chapter — written together.',
+      src: '/prenup-photos/PIX08237.jpeg',
+      caption: 'By grace, by love, and with you beside us, our forever begins.',
       year: 'October 16, 2026',
     },
   ],
-  gallery: Array.from({ length: 8 }, (_, i) => ({
-    src: `https://picsum.photos/seed/aa-gallery-${i + 1}/900/900`,
-    alt: `Antonio and Annadel — photo ${i + 1}`,
+  gallery: [
+    '/prenup-photos/PIX08278.jpeg',
+    '/prenup-photos/PIX08275.jpeg',
+    '/prenup-photos/PIX08266.jpeg',
+    '/prenup-photos/PIX08261.jpeg',
+    '/prenup-photos/PIX08100.jpeg',
+    '/prenup-photos/PIX07987.jpeg',
+    '/prenup-photos/PIX07893.jpeg',
+    '/prenup-photos/PIX07755.jpeg',
+    '/prenup-photos/PIX07685.jpeg',
+    '/prenup-photos/PIX07583.jpeg',
+    '/prenup-photos/PIX07485.jpeg',
+    '/prenup-photos/PIX07298.jpeg',
+  ].map((src, i) => ({
+    src,
+    alt: `Antonio and Annadel prenup photo ${i + 1}`,
   })),
 };
