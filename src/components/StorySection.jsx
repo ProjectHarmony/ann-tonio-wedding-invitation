@@ -4,7 +4,7 @@ import { photos } from '../config/siteConfig';
 import SectionLabel from './SectionLabel';
 import SectionReveal from './SectionReveal';
 
-function Chapter({ photo, index, reversed }) {
+function Chapter({ photo, reversed }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], ['-8%', '8%']);
@@ -27,10 +27,7 @@ function Chapter({ photo, index, reversed }) {
       </div>
 
       <SectionReveal delay={0.1}>
-        <span className="font-accent text-3xl text-hydrangea-500">
-          {String(index + 1).padStart(2, '0')}
-        </span>
-        <p className="mt-2 text-xs uppercase tracking-widest2 text-ink-400">{photo.year}</p>
+        <p className="text-xs uppercase tracking-widest2 text-ink-400">{photo.year}</p>
         <p className="mt-4 font-display text-2xl sm:text-3xl text-ink-700 text-balance leading-snug">
           {photo.caption}
         </p>
@@ -45,19 +42,21 @@ export default function StorySection() {
       <div className="mx-auto max-w-5xl">
         <div className="mb-16 flex items-start justify-between">
           <SectionReveal>
-            <h2 className="font-display text-3xl sm:text-5xl text-ink-700">Our Story</h2>
+            <h2 className="font-display text-3xl sm:text-5xl text-ink-700">
+              Written in Love
+            </h2>
             <p className="mt-3 max-w-md text-ink-400">
-              A few chapters that led to the next one — written together, from here on.
+              A tender glimpse of the love we are carrying into forever.
             </p>
           </SectionReveal>
           <div className="hidden sm:block">
-            <SectionLabel>our story</SectionLabel>
+            <SectionLabel>with love</SectionLabel>
           </div>
         </div>
 
         <div className="flex flex-col gap-20 sm:gap-28">
           {photos.story.map((photo, i) => (
-            <Chapter key={photo.src} photo={photo} index={i} reversed={i % 2 === 1} />
+            <Chapter key={photo.src} photo={photo} reversed={i % 2 === 1} />
           ))}
         </div>
       </div>

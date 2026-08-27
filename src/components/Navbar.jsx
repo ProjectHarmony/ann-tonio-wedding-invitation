@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { couple } from '../config/siteConfig';
 
 const links = [
-  { href: '#story', label: 'Our Story' },
+  { href: '#story', label: 'Love' },
   { href: '#details', label: 'Details' },
   { href: '#entourage', label: 'Entourage' },
   { href: '#gallery', label: 'Gallery' },
