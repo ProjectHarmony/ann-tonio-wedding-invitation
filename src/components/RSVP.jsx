@@ -114,7 +114,7 @@ export default function RSVP() {
               <p className="mt-2 text-sm text-ink-400">
                 Double-check the spelling, or try the invitation code printed on your card. If
                 you believe this is a mistake, reach out to us directly — contact details are in
-                the Details section above.
+                The Details section above.
               </p>
               <button
                 type="button"

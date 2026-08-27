@@ -62,7 +62,7 @@ export const reminders = {
     'We love your children dearly, however, this celebration will be for adults only.',
   rsvpNote:
     'Due to space limitations and to keep this a personal and meaningful celebration, we are inviting only those specifically named on the invitation.',
-  rsvpDeadline: 'August 31, 2026',
+  rsvpDeadline: 'September 20, 2026',
 };
 
 export const contact = {

@@ -94,9 +94,16 @@ export default function Entourage() {
           </p>
         </SectionReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-2 max-w-3xl mx-auto mb-20">
-          <NameColumn title="" names={principalSponsors.men} />
-          <NameColumn title="" names={principalSponsors.women} delay={0.1} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8 max-w-3xl mx-auto mb-20 text-center">
+          <NameColumn
+            title=""
+            names={principalSponsors.men}
+          />
+          <NameColumn
+            title=""
+            names={principalSponsors.women}
+            delay={0.1}
+          />
         </div>
 
         {/* Secondary Sponsors */}
