@@ -24,14 +24,14 @@ export const couple = {
 };
 
 // ISO date string used to drive the countdown — edit this if the date changes.
-export const weddingDateISO = '2026-10-16T13:45:00+08:00';
+export const weddingDateISO = '2026-10-16T13:44:30+08:00';
 
 export const ceremony = {
   label: 'Ceremony',
   venueName: 'Archdiocesan Shrine of St. Joseph',
   venueAddress: 'San Jose, Camarines Sur',
   date: 'Friday, October 16, 2026',
-  time: '1:45 PM',
+  time: '1:30 PM',
   mapUrl: 'https://maps.google.com/?q=Archdiocesan+Shrine+of+St.+Joseph+San+Jose+Camarines+Sur',
 };
 
@@ -40,18 +40,18 @@ export const reception = {
   venueName: 'Casa Veronica',
   venueAddress: 'Goa, Camarines Sur',
   date: 'Friday, October 16, 2026',
-  time: '5:00 PM',
+  time: '4:30 PM',
   mapUrl:
     'https://www.google.com/maps/search/?api=1&query=Casa%20Veronica%2C%20Goa%2C%20Camarines%20Sur',
 };
 
 // The full day-of timeline, used for the "Wedding Timeline" strip.
 export const timeline = [
-  { time: '1:45 PM', label: 'Church Ceremony', icon: 'church' },
+  { time: '1:30 PM', label: 'Church Ceremony', icon: 'church' },
   { time: '2:30 PM', label: 'Exchange of Vows', icon: 'rings' },
   { time: '4:00 PM', label: 'Photos', icon: 'camera' },
   { time: '4:30 PM', label: 'Reception Begins', icon: 'arch' },
-  { time: '5:00 PM', label: "Couple's Entrance", icon: 'couple' },
+  { time: '4:30 PM', label: "Couple's Entrance", icon: 'couple' },
   { time: '7:00 PM', label: 'Dinner', icon: 'dinner' },
 ];
 
@@ -104,12 +104,12 @@ export const photos = {
       year: 'With every promise',
     },
     {
-      src: '/prenup-photos/PIX08077.jpeg',
+      src: '/prenup-photos/PIX08204.jpeg',
       caption: 'The best days are the ones we get to walk through hand in hand.',
       year: 'With every sunrise',
     },
     {
-      src: '/prenup-photos/PIX08237.jpeg',
+      src: '/prenup-photos/PIX07290.jpeg',
       caption: 'By grace, by love, and with you beside us, our forever begins.',
       year: 'October 16, 2026',
     },
