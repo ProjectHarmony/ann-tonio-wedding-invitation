@@ -25,7 +25,7 @@ export default function RSVP() {
           <div className="flex flex-col items-center text-center rounded-2xl border border-ink-100 bg-white/80 backdrop-blur-sm p-9 sm:p-12">
             <p className="font-display text-xl text-ink-700">We can't wait to celebrate with you</p>
             <p className="mt-3 text-sm text-ink-400 max-w-sm">
-              Kindly respond by [your RSVP deadline] so we can finalize the details.
+              Kindly respond by September 20 so we can finalize the details.
             </p>
             <a
               href={RSVP_FORM_URL}
