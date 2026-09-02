@@ -87,9 +87,9 @@ export default function Entourage() {
         </div>
 
         {/* Principal Sponsors */}
-        <SectionReveal className="text-center mb-8">
-          <p className="font-script italic text-2xl sm:text-3xl text-ink-700">Principal Sponsors</p>
-          <p className="mt-1 text-xs uppercase tracking-widest2 text-hydrangea-600">
+       <SectionReveal className="text-center mb-8">
+          <p className="font-script italic text-xl sm:text-3xl text-ink-700">Principal Sponsors</p>
+          <p className="mt-1 text-[10px] sm:text-xs uppercase tracking-widest2 text-hydrangea-600">
             {principalSponsors.intro}
           </p>
         </SectionReveal>
