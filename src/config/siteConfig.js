@@ -51,7 +51,7 @@ export const timeline = [
   { time: '2:30 PM', label: 'Exchange of Vows', icon: 'rings' },
   { time: '4:00 PM', label: 'Photos', icon: 'camera' },
   { time: '4:30 PM', label: 'Reception Begins', icon: 'arch' },
-  { time: '4:30 PM', label: "Couple's Entrance", icon: 'couple' },
+  { time: '5:00 PM', label: "Couple's Entrance", icon: 'couple' },
   { time: '7:00 PM', label: 'Dinner', icon: 'dinner' },
 ];
 
