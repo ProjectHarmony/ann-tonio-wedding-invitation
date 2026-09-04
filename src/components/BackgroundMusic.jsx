@@ -18,7 +18,7 @@ export default function BackgroundMusic() {
         window.removeEventListener("click", startMusic);
         window.removeEventListener("touchstart", startMusic);
         window.removeEventListener("keydown", startMusic);
-      } catch (error) {
+      } catch {
         // Browser blocked autoplay.
         // It will try again after user interaction.
       }

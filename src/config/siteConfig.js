@@ -77,6 +77,13 @@ export const attireGuide = {
     description: 'Barong Tagalog with black pants · Metallic silver gray',
     palette: ['#9CA3AF', '#B8BEC6', '#CBD0D6', '#DCE0E4'],
   },
+  entourage: {
+    label: 'Entourage',
+    description: 'Coat and tie · Midnight / navy blue',
+    palette: ['#0B1B36', '#152C52', '#1E3A5F', '#2C4A73'],
+    image: '/dress-2.jpg',
+    imageAlt: 'Entourage attire reference — navy gowns with black coat and tie',
+  },
   guest: {
     label: 'Guests',
     description: 'Formal to semi-formal, in shades of blue',

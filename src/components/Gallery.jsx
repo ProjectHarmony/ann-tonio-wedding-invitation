@@ -17,26 +17,25 @@ const photos = Object.keys(modules)
   .sort()
   .map((path, i) => ({
     src: modules[path],
-    alt: `Prenup photo ${i + 1}`,
+    alt: `Antonio and Annadel prenup photo ${i + 1}`,
   }));
 
 export default function Gallery() {
   const [index, setIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [direction, setDirection] = useState(1);
 
-  const goTo = useCallback(
-    (newIndex, dir) => {
-      setDirection(dir);
-      setIndex((newIndex + photos.length) % photos.length);
-    },
+  const openAt = useCallback((i) => {
+    setIndex(i);
+    setLightboxOpen(true);
+  }, []);
+
+  const next = useCallback(() => setIndex((i) => (i + 1) % photos.length), []);
+  const prev = useCallback(
+    () => setIndex((i) => (i - 1 + photos.length) % photos.length),
     []
   );
 
-  const next = useCallback(() => goTo(index + 1, 1), [index, goTo]);
-  const prev = useCallback(() => goTo(index - 1, -1), [index, goTo]);
-
-  // Keyboard nav when lightbox is open
+  // Keyboard nav while the lightbox is open
   useEffect(() => {
     if (!lightboxOpen) return;
     function handleKey(e) {
@@ -50,20 +49,14 @@ export default function Gallery() {
 
   if (photos.length === 0) return null;
 
-  const variants = {
-    enter: (dir) => ({ x: dir > 0 ? 60 : -60, opacity: 0 }),
-    center: { x: 0, opacity: 1 },
-    exit: (dir) => ({ x: dir > 0 ? -60 : 60, opacity: 0 }),
-  };
-
   return (
     <section id="gallery" className="relative bg-ink-700 bg-noise px-6 py-24 sm:py-32">
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-6xl">
         <div className="mb-12 flex items-start justify-between">
           <SectionReveal>
             <h2 className="font-display text-3xl sm:text-5xl text-hydrangea-100">Gallery</h2>
             <p className="mt-3 max-w-md text-hydrangea-200/70">
-              A few favorite moments — tap the photo for a closer look.
+              Every favorite moment — scroll sideways, tap any photo for the full-size view.
             </p>
           </SectionReveal>
           <div className="hidden sm:block">
@@ -72,65 +65,40 @@ export default function Gallery() {
         </div>
 
         <SectionReveal>
-          <div className="relative mx-auto max-w-3xl">
-            <div className="relative aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-2xl">
-              <AnimatePresence initial={false} custom={direction} mode="wait">
-                <motion.img
-                  key={index}
-                  custom={direction}
-                  variants={variants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{ duration: 0.35, ease: 'easeOut' }}
-                  src={photos[index].src}
-                  alt={photos[index].alt}
-                  drag="x"
-                  dragConstraints={{ left: 0, right: 0 }}
-                  dragElastic={0.6}
-                  onDragEnd={(e, { offset, velocity }) => {
-                    const swipe = Math.abs(offset.x) * velocity.x;
-                    if (swipe < -5000 || offset.x < -80) next();
-                    else if (swipe > 5000 || offset.x > 80) prev();
-                  }}
-                  onClick={() => setLightboxOpen(true)}
-                  className="h-full w-full cursor-pointer object-cover"
-                />
-              </AnimatePresence>
-
-              <button
-                type="button"
-                aria-label="Previous photo"
-                onClick={prev}
-                className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-ink-900/40 p-2 text-hydrangea-100 hover:bg-ink-900/60 transition-colors"
-              >
-                <ChevronLeft size={20} />
-              </button>
-              <button
-                type="button"
-                aria-label="Next photo"
-                onClick={next}
-                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-ink-900/40 p-2 text-hydrangea-100 hover:bg-ink-900/60 transition-colors"
-              >
-                <ChevronRight size={20} />
-              </button>
-            </div>
-
-            <div className="mt-4 flex items-center justify-center gap-2">
-              {photos.map((photo, i) => (
-                <button
-                  key={photo.src}
-                  type="button"
-                  aria-label={`Go to photo ${i + 1}`}
-                  onClick={() => goTo(i, i > index ? 1 : -1)}
-                  className={`h-1.5 rounded-full transition-all ${
-                    i === index ? 'w-6 bg-hydrangea-100' : 'w-1.5 bg-hydrangea-100/30'
-                  }`}
-                />
-              ))}
+          <div className="gallery-scroll -mx-6 overflow-x-auto px-6 pb-4">
+            <div className="grid h-[440px] grid-flow-col-dense grid-rows-2 auto-cols-[42vw] gap-3 sm:h-[520px] sm:auto-cols-[30vw] sm:gap-4 md:auto-cols-[220px] lg:auto-cols-[240px]">
+              {photos.map((photo, i) => {
+                const feature = i % 7 === 0;
+                return (
+                  <motion.button
+                    key={photo.src}
+                    type="button"
+                    onClick={() => openAt(i)}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ duration: 0.3, ease: 'easeOut' }}
+                    aria-label={`View full-size: ${photo.alt}`}
+                    className={`group relative block h-full w-full snap-start overflow-hidden rounded-2xl ring-1 ring-white/10 ${
+                      feature ? 'col-span-2 row-span-2' : ''
+                    }`}
+                  >
+                    <img
+                      src={photo.src}
+                      alt={photo.alt}
+                      loading={i < 4 ? 'eager' : 'lazy'}
+                      decoding="async"
+                      className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    />
+                    <span className="absolute inset-0 bg-gradient-to-t from-ink-900/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  </motion.button>
+                );
+              })}
             </div>
           </div>
         </SectionReveal>
+
+        <p className="mt-4 text-center text-xs uppercase tracking-widest2 text-hydrangea-200/50">
+          {photos.length} photos · scroll to browse
+        </p>
       </div>
 
       <AnimatePresence>
