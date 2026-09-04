@@ -8,7 +8,7 @@ import Entourage from './components/Entourage';
 import Gallery from './components/Gallery';
 import RSVP from './components/RSVP';
 import Footer from './components/Footer';
-
+import BackgroundMusic from "./components/BackgroundMusic";
 export default function App() {
   return (
     <div className="font-body">
@@ -16,12 +16,15 @@ export default function App() {
       <Hero />
       <Countdown />
       <StorySection />
+      
       <EventDetails />
       <AttireGuide />
+            <BackgroundMusic />
       <Entourage />
       <Gallery />
       <RSVP />
       <Footer />
+
     </div>
   );
 }

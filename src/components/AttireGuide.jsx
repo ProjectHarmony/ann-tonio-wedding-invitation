@@ -37,6 +37,16 @@ export default function AttireGuide() {
           <PaletteRow group={attireGuide.principalSponsors} delay={0.05} />
           <PaletteRow group={attireGuide.guest} delay={0.15} />
         </div>
+
+        <SectionReveal delay={0.25} className="mt-8">
+          <div className="overflow-hidden rounded-2xl border border-ink-100">
+            <img
+              src="/attire-guide.jpg"
+              alt="Attire guide color palette reference"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </SectionReveal>
       </div>
     </section>
   );

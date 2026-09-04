@@ -87,16 +87,23 @@ export default function Entourage() {
         </div>
 
         {/* Principal Sponsors */}
-        <SectionReveal className="text-center mb-8">
-          <p className="font-script italic text-2xl sm:text-3xl text-ink-700">Principal Sponsors</p>
-          <p className="mt-1 text-xs uppercase tracking-widest2 text-hydrangea-600">
+       <SectionReveal className="text-center mb-8">
+          <p className="font-script italic text-xl sm:text-3xl text-ink-700">Principal Sponsors</p>
+          <p className="mt-1 text-[10px] sm:text-xs uppercase tracking-widest2 text-hydrangea-600">
             {principalSponsors.intro}
           </p>
         </SectionReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-2 max-w-3xl mx-auto mb-20">
-          <NameColumn title="" names={principalSponsors.men} />
-          <NameColumn title="" names={principalSponsors.women} delay={0.1} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8 max-w-3xl mx-auto mb-20 text-center">
+          <NameColumn
+            title=""
+            names={principalSponsors.men}
+          />
+          <NameColumn
+            title=""
+            names={principalSponsors.women}
+            delay={0.1}
+          />
         </div>
 
         {/* Secondary Sponsors */}

@@ -50,7 +50,7 @@ export default function Hero() {
       >
         <motion.p
           variants={item}
-          className="font-script italic text-hydrangea-200 text-base sm:text-lg tracking-[0.2em] uppercase mb-5"
+          className="font-script italic text-hydrangea-200 text-xs sm:text-lg tracking-[0.15em] sm:tracking-[0.2em] uppercase mb-5"
         >
           Together with their families
         </motion.p>
@@ -66,16 +66,24 @@ export default function Hero() {
           {couple.brideFirstName}
         </motion.h1>
 
-        <motion.div variants={item} className="mt-8 flex items-center gap-4 text-hydrangea-100">
-          <span className="h-px w-10 bg-hydrangea-300/70" />
-          <p className="text-sm sm:text-base uppercase tracking-widest2">{ceremony.date}</p>
-          <span className="h-px w-10 bg-hydrangea-300/70" />
+        <motion.div
+          variants={item}
+          className="mt-8 grid grid-cols-2 gap-3 sm:gap-6 text-hydrangea-100 w-full max-w-xs sm:max-w-md"
+        >
+          <div className="text-center border-r border-hydrangea-300/40 pr-3 sm:pr-6">
+            <p className="text-xs sm:text-base uppercase tracking-widest2">
+              {ceremony.date}
+            </p>
+          </div>
+          <div className="text-center pl-3 sm:pl-6">
+            <p className="text-xs sm:text-base text-hydrangea-200/90">
+              {ceremony.venueName}
+              <br className="sm:hidden" />
+              <span className="hidden sm:inline"> &middot; </span>
+              {ceremony.venueAddress}
+            </p>
+          </div>
         </motion.div>
-
-        <motion.p variants={item} className="mt-3 text-hydrangea-200/90 text-sm sm:text-base">
-          {ceremony.venueName} &middot; {ceremony.venueAddress}
-        </motion.p>
-
         <motion.a
           variants={item}
           href="#countdown"
