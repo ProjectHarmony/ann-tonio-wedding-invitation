@@ -9,7 +9,7 @@ function PaletteRow({ group, delay }) {
         <Shirt size={20} className="text-hydrangea-600" />
         <h4 className="mt-4 font-display text-xl text-ink-700">{group.label}</h4>
         <p className="mt-2 text-sm text-ink-400">{group.description}</p>
-        <div className="mt-5 flex gap-2">
+        <div className="mt-5 flex flex-wrap gap-2">
           {group.palette.map((hex) => (
             <span
               key={hex}
@@ -19,6 +19,16 @@ function PaletteRow({ group, delay }) {
             />
           ))}
         </div>
+        {group.image && (
+          <div className="mt-6 overflow-hidden rounded-xl bg-white ring-1 ring-ink-900/10">
+            <img
+              src={group.image}
+              alt={group.imageAlt || `${group.label} attire reference`}
+              loading="lazy"
+              className="h-auto w-full object-contain"
+            />
+          </div>
+        )}
       </div>
     </SectionReveal>
   );
@@ -33,9 +43,10 @@ export default function AttireGuide() {
           <p className="mt-3 text-ink-400">{attireGuide.intro}</p>
         </SectionReveal>
 
-        <div className="flex flex-col sm:flex-row gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
           <PaletteRow group={attireGuide.principalSponsors} delay={0.05} />
-          <PaletteRow group={attireGuide.guest} delay={0.15} />
+          <PaletteRow group={attireGuide.entourage} delay={0.12} />
+          <PaletteRow group={attireGuide.guest} delay={0.2} />
         </div>
 
         <SectionReveal delay={0.25} className="mt-8">

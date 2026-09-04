@@ -19,17 +19,18 @@ export const parents = {
 export const principalSponsors = {
   intro: 'To stand as witness as we exchange our vows',
   men: [
-    'Mr. Arnolfo Ramirez',
-    'Mr. Raul Rebuya',
     'Mr. Rolando Pamada',
+    'Mr. Raul Rebuya',
     'Mr. Aaron Napoles',
-    'Mr. Gil Prado',
-    'Engr. Ronil Palaypayon',
-    'Mr. Allan Osea',
     'Maj. Ric Pitallano',
+    'Mr. Arnolfo Ramirez',
     'Hon. Rogelio Chavez',
-    'Mr. Agusto Clavecilla',
-    'Atty. Agusto Camano',
+    'Mr. Allan Osea',
+    'Engr. Ronil Palaypayon',
+    'Mr. Gil Prado',
+    'Mr. Augusto Clavecilla',
+    'Atty. Augusto Camano',
+    'Brig. Gen. Eddie Pilapil, PA',
     'Mr. Dennis Clavecilla',
     'Mr. Joel Austria Verdeflor',
     'Mr. Adrian Carmelo',
@@ -38,19 +39,20 @@ export const principalSponsors = {
     'Mr. Renee Orillosa',
   ],
   women: [
-    'Mrs. Grace Ramirez',
-    'Mrs. Nilda Rebuya',
     'Mrs. Emelinda Triggs',
+    'Mrs. Nilda Rebuya',
     'Mrs. Chona Napoles',
-    'Mrs. Gloria Abad',
-    'Mrs. Porferia San Buenaventura',
-    'Mrs. Jennie Belleza',
     'Mrs. Marites Pitallano',
-    'Mrs. Dyn Habana',
-    'Mrs. Francia Katimbang',
+    'Mrs. Grace Ramirez',
+    'Mrs. Jennie Belleza',
+    'Mrs. Rosario Beluang',
+    'Mrs. Porferia San Buenaventura',
+    'Mrs. Gloria Abad',
+    'Mrs. Francia Catimbang',
     'Mrs. Marissa Lastrollo',
+    'Mrs. Dyn Habana',
     'Mrs. Joanne Pasia',
-    'Mrs. Liezle Atole',
+    'Engr. Liezle Atole',
     'Mrs. Michelle San Jose',
     'Mrs. Jemma Atanacio',
     'Mrs. Lalaine Orlina',
@@ -62,7 +64,7 @@ export const secondarySponsors = [
   {
     role: 'Candle',
     meaning: 'To light our path',
-    names: ['Aura Pajigo', 'Vince Noel Romero'],
+    names: ['Aura Romero', 'Vince Noel Romero'],
   },
   {
     role: 'Ribbon',
@@ -84,7 +86,7 @@ export const secondarySponsors = [
 export const honorRoles = [
   { role: 'Best Man', names: ['Christian Baduya', 'Jestoni Clavecilla'] },
   { role: 'Maid of Honor', names: ['Khristine May Peña'] },
-  { role: 'Matron of Honor', names: ['Genelly Darlene Prado'] },
+  { role: 'Matron of Honor', names: ['Genelly Darlene Tremocha'] },
 ];
 
 export const bearers = [
@@ -108,13 +110,13 @@ export const bearers = [
 export const flowerGirls = {
   role: 'Flower Girls',
   meaning: 'To shower our path with flowers',
-  names: ['Anabelle Ramirez', 'Ana Marie Pamada', 'Veronica Ramirez', 'Donna Mae Pamada'],
+  names: ['Anabelle Ramirez', 'Ana Marie Pamada', 'Veronica Ramirez', 'Leni Pamada'],
 };
 
 export const bridalParty = {
   bridesmaids: {
     role: 'Bridesmaids',
-    names: ['Isaleen Ras', 'Maria Lourdes Azor', 'Christine May Banaag', 'Jennielyn Pelimiano'],
+    names: ['Isaleen Ras', 'Maria Lourdes Azor-Paa', 'Christine May Banaag-Carag', 'Jennielyn Pelimiano'],
   },
   groomsmen: {
     role: 'Groomsmen',

@@ -66,3 +66,27 @@ body {
 .text-balance {
   text-wrap: balance;
 }
+
+/* horizontal gallery filmstrip — momentum scroll + snap + a slim rail
+   that reads as part of the dark section rather than the OS default */
+.gallery-scroll {
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(169, 194, 222, 0.5) transparent;
+}
+.gallery-scroll::-webkit-scrollbar {
+  height: 8px;
+  width: auto;
+}
+.gallery-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+}
+.gallery-scroll::-webkit-scrollbar-thumb {
+  background: rgba(169, 194, 222, 0.5);
+  border-radius: 8px;
+}
+.gallery-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(169, 194, 222, 0.8);
+}
