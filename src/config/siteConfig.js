@@ -62,12 +62,35 @@ export const reminders = {
     'We love your children dearly, however, this celebration will be for adults only.',
   rsvpNote:
     'Due to space limitations and to keep this a personal and meaningful celebration, we are inviting only those specifically named on the invitation.',
-  rsvpDeadline: 'September 20, 2026',
+  rsvpDeadline: 'September 25, 2026',
 };
 
 export const contact = {
   phoneNumbers: ['0950 891 5193', '0909 776 8766'],
   facebook: 'Annadel Pamada Prado',
+};
+
+export const giftQR = {
+  intro:
+    "Your presence and prayers already mean the world to us. If you'd still like to send a little something for our new journey together, you're welcome to scan below — truly, no pressure at all.",
+  accounts: [
+    {
+      bank: 'RCBC',
+      name: 'Antonio Clavecilla',
+      accountLabel: '**** 0757',
+      image: '/qr-rcbc.jpg',
+    },
+    {
+      bank: 'BPI',
+      name: 'Tony',
+      accountLabel: 'xxxxxxxxxxxx587',
+      image: '/qr-bpi.jpg',
+      // Source screenshot has black letterboxing above/below the card —
+      // crop to just the card instead of showing the full phone screen.
+      imageAspect: '828 / 794',
+      note: 'Transfer fees may apply',
+    },
+  ],
 };
 
 export const attireGuide = {

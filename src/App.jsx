@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import Countdown from './components/Countdown';
 import StorySection from './components/StorySection';
 import EventDetails from './components/EventDetails';
+import GiftQR from './components/GiftQR';
 import AttireGuide from './components/AttireGuide';
 import Entourage from './components/Entourage';
 import Gallery from './components/Gallery';
@@ -18,6 +19,7 @@ export default function App() {
       <StorySection />
       
       <EventDetails />
+      <GiftQR />
       <AttireGuide />
             <BackgroundMusic />
       <Entourage />

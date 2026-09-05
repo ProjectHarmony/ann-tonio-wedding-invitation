@@ -19,16 +19,6 @@ function PaletteRow({ group, delay }) {
             />
           ))}
         </div>
-        {group.image && (
-          <div className="mt-6 overflow-hidden rounded-xl bg-white ring-1 ring-ink-900/10">
-            <img
-              src={group.image}
-              alt={group.imageAlt || `${group.label} attire reference`}
-              loading="lazy"
-              className="h-auto w-full object-contain"
-            />
-          </div>
-        )}
       </div>
     </SectionReveal>
   );
@@ -36,7 +26,7 @@ function PaletteRow({ group, delay }) {
 
 export default function AttireGuide() {
   return (
-    <section className="relative bg-linen-dark px-6 pb-24 sm:pb-32">
+    <section className="relative bg-linen-dark px-6 pt-24 pb-24 sm:pt-32 sm:pb-32">
       <div className="mx-auto max-w-5xl">
         <SectionReveal className="text-center max-w-xl mx-auto mb-12">
           <h3 className="font-display text-2xl sm:text-3xl text-ink-700">Attire Guide</h3>
@@ -44,20 +34,33 @@ export default function AttireGuide() {
         </SectionReveal>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-          <PaletteRow group={attireGuide.principalSponsors} delay={0.05} />
-          <PaletteRow group={attireGuide.entourage} delay={0.12} />
+          <PaletteRow group={attireGuide.entourage} delay={0.05} />
+          <PaletteRow group={attireGuide.principalSponsors} delay={0.12} />
           <PaletteRow group={attireGuide.guest} delay={0.2} />
         </div>
 
-        <SectionReveal delay={0.25} className="mt-8">
-          <div className="overflow-hidden rounded-2xl border border-ink-100">
-            <img
-              src="/attire-guide.jpg"
-              alt="Attire guide color palette reference"
-              className="w-full h-auto object-cover"
-            />
-          </div>
-        </SectionReveal>
+        <div className="mt-8 flex flex-col items-center gap-6 sm:flex-row sm:items-stretch sm:justify-center">
+          <SectionReveal delay={0.25} className="h-64 sm:h-72 md:h-80">
+            <div className="h-full overflow-hidden rounded-2xl border border-ink-100">
+              <img
+                src={attireGuide.entourage.image}
+                alt={attireGuide.entourage.imageAlt}
+                loading="lazy"
+                className="mx-auto h-full w-auto object-contain"
+              />
+            </div>
+          </SectionReveal>
+          <SectionReveal delay={0.32} className="h-64 sm:h-72 md:h-80">
+            <div className="h-full overflow-hidden rounded-2xl border border-ink-100">
+              <img
+                src="/attire-guide.jpg"
+                alt="Attire guide color palette reference"
+                loading="lazy"
+                className="mx-auto h-full w-auto object-contain"
+              />
+            </div>
+          </SectionReveal>
+        </div>
       </div>
     </section>
   );
